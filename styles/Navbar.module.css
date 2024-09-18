@@ -29,8 +29,22 @@
     color: #FFC107;
 }
 
+.logo {
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
 
 
 .theme {
     margin-left: 40px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        position: relative;
+        height: 100%;
+    }
 }

@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <nav className={styles.nav}>
             <div className={styles.logo}>
-                <Image src={`/logo-${isDark ? 'dark' : 'light'}.svg`} width={50} height={50} alt='logo' />
+                <Image src={`/logo-${isDark ? 'dark' : 'light'}.svg`} fill alt='logo' />
             </div>
             <div className={styles.links}>
                 {navigation.map(({ id, title, path }) =>
@@ -24,7 +24,7 @@ const Navbar = () => {
                 )}
                 <div className={styles.theme} onClick={toggleTheme}>
                     <Image
-                        src={isDark ? 'dark.svg' : 'light.svg'}
+                        src={isDark ? '/dark.svg' : '/light.svg'}
                         width={40}
                         height={40}
                         alt='theme' />

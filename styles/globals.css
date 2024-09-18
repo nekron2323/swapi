@@ -14,9 +14,7 @@
   grid-auto-rows: auto 1fr auto;
 }
 
-main {
-
-}
+main {}
 
 header,
 footer {
@@ -25,4 +23,12 @@ footer {
   align-items: center;
   padding: 20px;
   background: linear-gradient(180deg, rgb(100, 100, 100) -10%, rgb(0, 0, 0) 76.7%);
+}
+
+
+@media (max-width: 768px) {
+  header,
+  footer {
+    min-height: 40px;
+  }
 }

@@ -1,0 +1,13 @@
+.films {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 24px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-size: 24px;
+}
