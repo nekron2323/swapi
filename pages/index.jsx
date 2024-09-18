@@ -6,7 +6,7 @@ export default function Home() {
   const { isDark } = useTheme()
   return (
       <div className={styles.img}>
-        <Image src={`/star-wars-${isDark ? 'dark' : 'light'}.svg`} fill={true} alt='logo' />
+        <Image src={`/star-wars-${isDark ? 'dark' : 'light'}.svg`} fill alt='logo' />
       </div>
   )
 }
