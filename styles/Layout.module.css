@@ -1,0 +1,7 @@
+.light {
+    background: linear-gradient(180.2deg, rgb(20, 20, 100) -20%, rgb(0, 0, 40) 90%);
+}
+
+.dark {
+    background: linear-gradient(180.2deg, rgb(100, 20, 20) -20%, rgb(40, 0, 0) 90%);
+}

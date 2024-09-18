@@ -4,5 +4,25 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
-  font-family: "Inter", "sans-serif";
+  font-family: "Oswald", "sans-serif";
+  color: white;
+}
+
+#__next {
+  min-height: 100vh;
+  display: grid;
+  grid-auto-rows: auto 1fr auto;
+}
+
+main {
+  /* background: linear-gradient(180.2deg, rgb(100, 20, 20) -6.9%, rgb(40, 0, 0) 76.7%); */
+}
+
+header,
+footer {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(180deg, rgb(100, 100, 100) -10%, rgb(0, 0, 0) 76.7%);
 }
