@@ -45,6 +45,7 @@ const Film = ({ film }) => {
                 tag='h3'
                 text={`${isOpenCharacters ? '-' : '+'} Characters`}
                 onClick={_ => setIsOpenCharacters(prev => !prev)}
+                style={{cursor: 'pointer'}}
             />
             <ul style={{ display: isOpenCharacters ? '' : 'none' }}>
                 {film.characters.map(el =>
