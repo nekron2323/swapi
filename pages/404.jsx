@@ -5,7 +5,9 @@ const NotFound = () => {
     return (
         <div className={styles.notFound}>
             <p className={styles.text}>4</p>
-            <Image src='death-star.svg' width={300} height={300} alt='Not Found' />
+            <div className={styles.img}>
+                <Image src='/death-star.svg' fill alt='Not Found' />
+            </div>
             <p className={styles.text}>4</p>
         </div>
 
