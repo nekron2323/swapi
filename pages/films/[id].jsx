@@ -1,10 +1,13 @@
 import Heading from "@/cmp/Heading"
 import Head from "next/head"
 import styles from '@/styles/Film.module.css'
+import { getFilm, getFilms } from "@/pages/api/getFilms"
+import Link from "next/link"
+import { getId } from "@/helpers/getIdFromUrl"
+import { useState } from "react"
 
 export const getStaticPaths = async () => {
-    const res = await fetch('https://swapi.dev/api/films')
-    const data = await res.json()
+    const data = await getFilms()
     const paths = data.results.map(({ episode_id }) => ({ params: { id: episode_id.toString() } }))
     return {
         paths,
@@ -13,9 +16,7 @@ export const getStaticPaths = async () => {
 }
 export const getStaticProps = async (context) => {
     const { id } = context.params
-
-    const res = await fetch(`https://swapi.dev/api/films/${id}`)
-    const film = await res.json()
+    const film = await getFilm(id)
     if (!film) return {
         notFound: true
     }
@@ -24,8 +25,7 @@ export const getStaticProps = async (context) => {
     }
 }
 const Film = ({ film }) => {
-    console.log(film);
-    
+    const [isOpenCharacters, setIsOpenCharacters] = useState(false)
     return (
         <div className={styles.film}>
             <Head>
@@ -40,12 +40,23 @@ const Film = ({ film }) => {
             <p><b>Director:</b> {film.director}</p>
             <p><b>Producer:</b> {film.producer}</p>
             <p><b>Release date:</b> {new Date(film.release_date).toLocaleDateString()}</p>
+            <hr />
+            <Heading
+                tag='h3'
+                text={`${isOpenCharacters ? '-' : '+'} Characters`}
+                onClick={_ => setIsOpenCharacters(prev => !prev)}
+            />
+            <ul style={{ display: isOpenCharacters ? '' : 'none' }}>
+                {film.characters.map(el =>
+                    <li>
+                        <Link href={`/people/${getId(el.url, 'people')}`}>
+                            {el.name}
+                        </Link>
+                    </li>
+                )}
+            </ul>
         </div>
     )
 }
 
 export default Film
-
-function dateFormat(date) {
-    return new Date(date).toLocaleDateString()
-}

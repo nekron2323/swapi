@@ -1,10 +1,10 @@
 import styles from '@/styles/Films.module.css'
 import Head from 'next/head'
 import Link from "next/link"
+import { getFilms } from '@/pages/api/getFilms'
 
 export const getStaticProps = async () => {
-    const res = await fetch('https://swapi.dev/api/films')
-    const data = await res.json()
+    const data = await getFilms()
     return {
         props: { films: data.results }
     }
