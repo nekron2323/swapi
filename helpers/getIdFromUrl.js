@@ -1,0 +1,1 @@
+export const getId = (url, type) => url.split(`https://swapi.dev/api/${type}/`)[1].split('/')[0]
