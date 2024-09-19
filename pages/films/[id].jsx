@@ -48,7 +48,7 @@ const Film = ({ film }) => {
             />
             <ul style={{ display: isOpenCharacters ? '' : 'none' }}>
                 {film.characters.map(el =>
-                    <li>
+                    <li key={el.url}>
                         <Link href={`/people/${getId(el.url, 'people')}`}>
                             {el.name}
                         </Link>
