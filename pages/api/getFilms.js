@@ -12,7 +12,6 @@ export const getFilm = (id) => {
         let film
         fetch(`https://swapi.dev/api/films/${id}`)
             .then(res => res.json())
-            // .then(data => resolve(data))
             .then(data => {
                 film = data
                 return Promise.all(data.characters.map(el => fetch(el)))

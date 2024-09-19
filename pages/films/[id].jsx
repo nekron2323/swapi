@@ -1,10 +1,10 @@
-import Heading from "@/cmp/Heading"
-import Head from "next/head"
-import styles from '@/styles/Film.module.css'
-import { getFilm, getFilms } from "@/pages/api/getFilms"
-import Link from "next/link"
-import { getId } from "@/helpers/getIdFromUrl"
 import { useState } from "react"
+import Head from "next/head"
+import Link from "next/link"
+import Heading from "@/cmp/Heading"
+import { getFilm, getFilms } from "@/pages/api/getFilms"
+import { getId } from "@/helpers/getIdFromUrl"
+import styles from '@/styles/Film.module.css'
 
 export const getStaticPaths = async () => {
     const data = await getFilms()
